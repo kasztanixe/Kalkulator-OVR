@@ -12,13 +12,34 @@
         <h1>Kalkulator OVR</h1>
         <form id="ovr-form">
             <label for="current-ovr">Obecny OVR:<br>
-            <input type="number" id="current-ovr"></label>
+            <input type="number" id="current-ovr" required></label>
 
             <label for="trained-ovr">Wytrenowany OVR:<br>
-            <input type="number" id="trained-ovr"></label>
+            <input type="number" id="trained-ovr" required></label>
 
             <label for="trained-skill">Wytrenowana Umiejętność:<br>
-            <input type="number" id="trained-skill"></label>
+            <input type="number" id="trained-skill" required></label>
+
+            <div class="engagement-options">
+                <h2>Zaangażowanie</h2>
+                <div class="engagement-container">
+                    <div class="engagement-img-container">
+                        <img src="./assets/engagement_5.svg" alt="Zaangażowanie 5%" data-value="0.05" class="engagement-img">
+                    </div>
+                    <div class="engagement-img-container">
+                        <img src="./assets/engagement_7.svg" alt="Zaangażowanie 7%" data-value="0.07" class="engagement-img">
+                    </div>
+                    <div class="engagement-img-container">
+                        <img src="./assets/engagement_12.svg" alt="Zaangażowanie 12%" data-value="0.12" class="engagement-img">
+                    </div>
+                    <div class="engagement-img-container">
+                        <img src="./assets/engagement_20.svg" alt="Zaangażowanie 20%" data-value="0.20" class="engagement-img">
+                    </div>
+                    <div class="engagement-img-container">
+                        <img src="./assets/engagement_33.svg" alt="Zaangażowanie 33%" data-value="0.33" class="engagement-img">
+                    </div>
+                </div>
+            </div>
 
             <button type="submit">Oblicz</button>
         </form> 
