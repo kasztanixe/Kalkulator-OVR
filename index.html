@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator OVR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator OVR</h1>
+        <form id="ovr-form">
+            <label for="current-ovr">Obecny OVR:<br>
+            <input type="number" id="current-ovr"></label>
+
+            <label for="trained-ovr">Wytrenowany OVR:<br>
+            <input type="number" id="trained-ovr"></label>
+
+            <label for="trained-skill">Wytrenowana Umiejętność:<br>
+            <input type="number" id="trained-skill"></label>
+
+            <button type="submit">Oblicz</button>
+        </form> 
+    </div>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
