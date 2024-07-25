@@ -90,8 +90,8 @@ input:focus {
 }
 
 .engagement-img-container {
-    width: 40px; /* Zmniejszona szerokość kontenera */
-    height: 56px; /* Zmniejszona wysokość kontenera */
+    width: 42px; /* Ustaw prawidłową szerokość kontenera */
+    height: 60px; /* Ustaw prawidłową wysokość kontenera */
     overflow: hidden;
     position: relative;
 }
@@ -99,7 +99,7 @@ input:focus {
 .engagement-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Dopasowuje obrazek do kontenera */
+    object-fit: contain; /* Dopasowuje obrazek do kontenera, ale zachowuje proporcje */
     cursor: pointer;
     transition: filter 0.3s ease; /* Efekt przyciemniania */
 }
