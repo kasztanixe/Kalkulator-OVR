@@ -145,11 +145,13 @@ button {
     height: 40px;
     box-sizing: border-box;
     margin: 0;
+    background-color: #007bff; /* Dodano domyślny kolor tła */
+    color: #fff; /* Dodano domyślny kolor tekstu */
 }
 
 button:hover {
-    background-color: #0062ca;
-    color: #fff;
+    background-color: #0062ca; /* Kolor tła po najechaniu */
+    color: #fff; /* Kolor tekstu po najechaniu */
 }
 
 button:focus {
@@ -158,14 +160,14 @@ button:focus {
 }
 
 button.inactive {
-    background: #151d34;
-    border: 1px solid #007bff;
-    color: #fff;
+    background: #151d34 !important; /* Ważne, aby nadpisać inne style */
+    border: 1px solid #007bff !important; /* Ważne, aby nadpisać inne style */
+    color: #fff !important; /* Ważne, aby nadpisać inne style */
 }
 
 button.active {
-    background: #007bff;
-    color: #fff;
+    background: #007bff !important; /* Ważne, aby nadpisać inne style */
+    color: #fff !important; /* Ważne, aby nadpisać inne style */
 }
 
 #result {
