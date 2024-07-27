@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     color: white;
-    background-image: url('./assets/bg.png'); /* Ścieżka do tła */
+    background-image: url('./assets/bg.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -21,7 +21,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2); 
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
@@ -55,7 +55,7 @@ input {
     width: 50%;
     padding: 8px;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background-color: #151d34;
     border: 1px solid #065fc2;
     border-radius: 10px;
@@ -68,7 +68,7 @@ input {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     margin: 0;
 }
 
@@ -79,54 +79,93 @@ input:focus {
 }
 
 .engagement-options {
-    margin-top: 20px;
+    margin-bottom: 0px; /* Space between select and buttons */
 }
 
-.engagement-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px; /* Przestrzeń między obrazkami */
-}
-
-.engagement-img-container {
-    width: 42px; /* Ustaw prawidłową szerokość kontenera */
-    height: 60px; /* Ustaw prawidłową wysokość kontenera */
-    overflow: hidden;
-    position: relative;
-}
-
-.engagement-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Dopasowuje obrazek do kontenera, ale zachowuje proporcje */
+select {
+    width: 250px;
+    padding: 8px;
+    background-color: #007bff;
+    border: 1px solid #065fc2;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+    appearance: none;
+    -moz-appearance: none;
+    text-align: center;
     cursor: pointer;
-    transition: filter 0.3s ease; /* Efekt przyciemniania */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    height: 40px;
+    line-height: 24px;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
 }
 
-.engagement-img.active {
-    filter: brightness(50%); /* Przyciemnienie o 50% */
+select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+option[value="0"] {
+    color: #ccc; /* Szary kolor dla domyślnej wartości */
+}
+
+.engagement-hero-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 10px; /* Space between engagement select and button group */
+    margin-bottom: 20px; /* Space below */
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 10px; /* Space between rows */
+    align-items: center;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px; /* Space between buttons in the same row */
 }
 
 button {
-    margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
     border: none;
-    color: white;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
     transition: background-color 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 button:hover {
     background-color: #0062ca;
+    color: #fff;
 }
 
 button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button.inactive {
+    background: #151d34;
+    border: 1px solid #007bff;
+    color: #fff;
+}
+
+button.active {
+    background: #007bff;
+    color: #fff;
 }
 
 #result {
@@ -149,21 +188,25 @@ button:focus {
 
 @media (max-width: 768px) {
     .container {
-        width: 80%;
+        width: 90%;
         padding: 10px;
     }
 
     input {
-        width: 50%;
+        width: 60%;
+    }
+
+    select {
+        width: 100%;
     }
 
     button {
-        width: 50%;
+        width: 80%;
         padding: 12px;
     }
 
     #result {
-        width: 80%;
+        width: 90%;
         padding: 10px;
     }
 }

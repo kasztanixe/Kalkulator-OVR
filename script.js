@@ -1,55 +1,101 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let selectedEngagement = null; // Domyślne zaangażowanie (brak zaangażowania)
+    let selectedEngagement = 0; // Domyślnie 0%
+    const activeBoosts = new Set(); // To keep track of active boosts
 
-    // Funkcja do obsługi kliknięcia na obrazki zaangażowania
-    document.querySelectorAll('.engagement-img').forEach(img => {
-        img.addEventListener('click', function() {
-            // Usuń klasę 'active' ze wszystkich obrazków
-            document.querySelectorAll('.engagement-img').forEach(image => image.classList.remove('active'));
-            // Dodaj klasę 'active' do klikniętego obrazka
-            this.classList.add('active');
-            // Przechowaj wybraną wartość zaangażowania
-            selectedEngagement = parseFloat(this.getAttribute('data-value'));
-        });
+    const engagementSelect = document.getElementById('engagement-select');
+    engagementSelect.value = selectedEngagement;
+
+    engagementSelect.addEventListener('change', function() {
+        selectedEngagement = parseFloat(this.value);
+    });
+
+    document.getElementById('hero-drink-button').addEventListener('click', function() {
+        toggleBoost('hero-drink');
+    });
+
+    document.getElementById('hero-boost-button').addEventListener('click', function() {
+        toggleBoost('hero-boost');
+    });
+
+    document.getElementById('hero-voice-button').addEventListener('click', function() {
+        toggleBoost('hero-voice');
+    });
+
+    document.getElementById('team-boost-button').addEventListener('click', function() {
+        toggleBoost('team-boost');
     });
 
     document.getElementById('ovr-form').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        let currentOVR = parseFloat(document.getElementById('current-ovr').value);
-        let trainedOVR = parseFloat(document.getElementById('trained-ovr').value);
-        let trainedSkill = parseFloat(document.getElementById('trained-skill').value);
+        const currentOVR = parseFloat(document.getElementById('current-ovr').value);
+        const trainedOVR = parseFloat(document.getElementById('trained-ovr').value);
+        const trainedSkill = parseFloat(document.getElementById('trained-skill').value);
 
-        // Sprawdź, czy wartości są liczbami
         if (isNaN(currentOVR) || isNaN(trainedOVR) || isNaN(trainedSkill)) {
-            document.getElementById('result').innerHTML = 'Proszę wprowadzić poprawne wartości liczbowej.';
-            document.getElementById('result').style.display = 'block'; // Wyświetl kontener z wynikiem
+            displayResult('Proszę wprowadzić poprawne wartości liczbowej.');
             return;
         }
 
-        // Sprawdź, czy wytrenowany OVR nie jest większy niż obecny OVR
         if (trainedOVR > currentOVR) {
-            document.getElementById('result').innerHTML = 'Wytrenowany OVR nie może być większy od obecnego OVR.';
-            document.getElementById('result').style.display = 'block'; // Wyświetl kontener z wynikiem
+            displayResult('Wytrenowany OVR nie może być większy od obecnego OVR.');
             return;
         }
 
-        // Sprawdź, czy wybrane zaangażowanie jest prawidłowe
         if (selectedEngagement === null) {
-            document.getElementById('result').innerHTML = 'Proszę wybrać zaangażowanie.';
-            document.getElementById('result').style.display = 'block'; // Wyświetl kontener z wynikiem
+            displayResult('Proszę wybrać zaangażowanie.');
             return;
         }
 
-        let result = calculateOVR(currentOVR, trainedOVR, trainedSkill, selectedEngagement);
-        let roundedResult = Math.round(result);
+        let baseResult = calculateOVR(currentOVR, trainedOVR, trainedSkill, selectedEngagement);
+        let finalResult = baseResult;
 
-        // Aktualizuj zawartość i styl kontenera wyniku
-        document.getElementById('result').innerHTML = `Wynik OVR: <span class="rounded-result">${roundedResult}</span>`;
-        document.getElementById('result').style.display = 'block'; // Wyświetl kontener z wynikiem
+        // Add boosts based on active buttons
+        let boostTotal = 0;
+        if (activeBoosts.has('hero-drink')) {
+            boostTotal += trainedOVR * 0.33; // Add 33% of trained OVR
+        }
+        if (activeBoosts.has('hero-boost')) {
+            boostTotal += trainedOVR * 0.33; // Add 33% of trained OVR
+        }
+        if (activeBoosts.has('hero-voice')) {
+            boostTotal += trainedOVR * 0.33; // Add 33% of trained OVR
+        }
+        if (activeBoosts.has('team-boost')) {
+            boostTotal += trainedOVR * 0.12; // Add 12% of trained OVR
+        }
+
+        finalResult += boostTotal;
+
+        const roundedResult = Math.round(finalResult);
+        displayResult(`Wynik OVR: <span class="rounded-result">${formatNumber(roundedResult)}</span>`);
     });
 
     function calculateOVR(current, trainedOVR, trainedSkill, engagement) {
         return current + (trainedOVR * engagement) + ((trainedSkill * 0.33) / 8);
+    }
+
+    function displayResult(message) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = message;
+        resultDiv.style.display = 'block';
+    }
+
+    function toggleBoost(boostType) {
+        const button = document.getElementById(`${boostType}-button`);
+        if (activeBoosts.has(boostType)) {
+            activeBoosts.delete(boostType);
+            button.classList.remove('active');
+            button.classList.add('inactive');
+        } else {
+            activeBoosts.add(boostType);
+            button.classList.add('active');
+            button.classList.remove('inactive');
+        }
+    }
+
+    // Format number with thousand separators
+    function formatNumber(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     }
 });
