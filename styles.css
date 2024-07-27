@@ -64,6 +64,7 @@ input {
     appearance: none;
     -moz-appearance: textfield;
     text-align: center;
+    transition: box-shadow 0.3s;
 }
 
 input::-webkit-outer-spin-button,
@@ -78,8 +79,14 @@ input:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
+input:hover {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 .engagement-options {
-    margin-bottom: 0px; /* Space between select and buttons */
+    margin-bottom: 0px;
 }
 
 select {
@@ -94,7 +101,7 @@ select {
     -moz-appearance: none;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     height: 40px;
     line-height: 24px;
     box-sizing: border-box;
@@ -102,33 +109,34 @@ select {
     margin: 0;
 }
 
-select:focus {
-    outline: none;
+select:hover {
+    background-color: #0062ca; 
+    color: #fff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 option[value="0"] {
-    color: #ccc; /* Szary kolor dla domyślnej wartości */
+    color: #ccc;
 }
 
 .engagement-hero-container {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 10px; /* Space between engagement select and button group */
-    margin-bottom: 20px; /* Space below */
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .button-group {
     display: flex;
-    flex-direction: column; /* Stack rows vertically */
-    gap: 10px; /* Space between rows */
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
 }
 
 .button-row {
     display: flex;
-    gap: 10px; /* Space between buttons in the same row */
+    gap: 10px;
 }
 
 button {
@@ -137,7 +145,7 @@ button {
     border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -145,13 +153,14 @@ button {
     height: 40px;
     box-sizing: border-box;
     margin: 0;
-    background-color: #007bff; /* Dodano domyślny kolor tła */
-    color: #fff; /* Dodano domyślny kolor tekstu */
+    background-color: #007bff;
+    color: #fff;
 }
 
 button:hover {
-    background-color: #0062ca; /* Kolor tła po najechaniu */
-    color: #fff; /* Kolor tekstu po najechaniu */
+    background-color: #0062ca;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 button:focus {
@@ -160,14 +169,20 @@ button:focus {
 }
 
 button.inactive {
-    background: #151d34 !important; /* Ważne, aby nadpisać inne style */
-    border: 1px solid #007bff !important; /* Ważne, aby nadpisać inne style */
-    color: #fff !important; /* Ważne, aby nadpisać inne style */
+    background: #151d34;
+    border: 1px solid #065fc2;
+    color: #fff;
+}
+
+button.inactive:hover {
+    background-color: #003f83;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 button.active {
-    background: #007bff !important; /* Ważne, aby nadpisać inne style */
-    color: #fff !important; /* Ważne, aby nadpisać inne style */
+    background: #007bff;
+    color: #fff;
 }
 
 #result {
