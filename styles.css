@@ -210,7 +210,7 @@ button.active {
     display: flex;
     gap: 10px;
     padding: 10px;
-    background: transparent; /* Przezroczyste tło */
+    background: transparent;
     z-index: 2;
 }
 
@@ -230,13 +230,13 @@ button.active {
 }
 
 .nav-button:hover {
-    background-color: #003f83; /* Ciemniejszy niebieski przy hover */
+    background-color: #003f83;
     color: #fff;
-    border-color: #065fc2; /* Ciemniejszy niebieski obramowanie przy hover */
+    border-color: #065fc2;
 }
 
 .nav-button.active {
-    background-color: #007bff; /* Aktywny kolor tła */
+    background-color: #007bff;
     color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }

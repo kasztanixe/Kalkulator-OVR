@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('future-ovr-form');
-    const resultDiv = document.getElementById('result');  // Poprawa: używamy poprawnego ID
+    const resultDiv = document.getElementById('result');
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -11,17 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const dailyBonus = parseFloat(document.getElementById('daily-bonus').value);
         const desiredOVR = parseFloat(document.getElementById('desired-ovr').value);
 
-        // Walidacja wejść
         if (isNaN(itemsOVR) || isNaN(cardSlotsOVR) || isNaN(dailyBonus) || isNaN(desiredOVR)) {
             displayResult('Proszę wprowadzić poprawne wartości liczbowe.');
             return;
         }
 
-        // Przetwarzanie OVR innych bonusów
         const otherBonusesArray = otherBonusesInput.split(',').map(item => parseFloat(item.trim())).filter(item => !isNaN(item));
         const sumOtherBonuses = otherBonusesArray.reduce((acc, curr) => acc + curr, 0);
 
-        // Sprawdzenie, czy Chciany OVR jest większy od sumy OVR przedmiotów, bonusów i slotów kart
         const totalExistingOVR = itemsOVR + sumOtherBonuses + cardSlotsOVR;
 
         if (desiredOVR <= totalExistingOVR) {
