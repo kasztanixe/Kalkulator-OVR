@@ -1,8 +1,8 @@
 # Kalkulator OVR
 
-## Jak używać
+## Opis
 
-Kalkulator OVR to aplikacja internetowa umożliwiająca obliczanie oraz prognozowanie wartości OVR (Overall Rating) w zależności od różnych parametrów. Aplikacja składa się z dwóch kalkulatorów:
+Kalkulator OVR to aplikacja internetowa przeznaczona dla graczy gry **FootballTeamGame**. Umożliwia obliczanie oraz prognozowanie wartości OVR (Overall Rating) w zależności od różnych parametrów. Aplikacja składa się z dwóch kalkulatorów:
 
 ### 1. Kalkulator OVR
 
@@ -26,6 +26,6 @@ Kalkulator OVR to aplikacja internetowa umożliwiająca obliczanie oraz prognozo
 
 Aby uzyskać dostęp do aplikacji, odwiedź stronę: [Kalkulator OVR](https://kasztanixe.github.io/Kalkulator-OVR).
 
-## Licencja
+## Autor
 
-Ten projekt jest licencjonowany na zasadach licencji MIT.
+Projekt został stworzony przez **Kasztan**. W razie pytań lub potrzeby pomocy, skontaktuj się przez Discord: **kasztanixe**.
