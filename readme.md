@@ -28,4 +28,4 @@ Aby uzyskać dostęp do aplikacji, odwiedź stronę: [Kalkulator OVR](https://ka
 
 ## Autor
 
-Projekt został stworzony przez **Kasztan**. W razie pytań lub potrzeby pomocy, skontaktuj się przez Discord: **kasztanixe**.
+Projekt został stworzony przez **Kasztan**. W razie pytań lub potrzeby pomocy, skontaktuj się przez Discord: **kasztanixe**. 
