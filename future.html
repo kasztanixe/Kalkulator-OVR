@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Przyszłego OVR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation-box">
+        <a href="index.html" class="nav-button">Kalkulator OVR</a>
+        <a href="future.html" class="nav-button active">Kalkulator Przyszłego OVR</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Kalkulator Przyszłego OVR</h1>
+        <form id="future-ovr-form">
+
+            <label for="desired-ovr">Chciany OVR:<br>
+                <input type="number" id="desired-ovr" name="desired-ovr" required>
+            </label>
+
+            <label for="items-ovr">OVR Przedmiotów:<br>
+                <input type="number" id="items-ovr" name="items-ovr" required>
+            </label>
+
+            <label for="card-slots-ovr">OVR Slotów Kart:<br>
+                <input type="number" id="card-slots-ovr" name="card-slots-ovr" required>
+            </label>
+
+            <label for="other-bonuses">OVR Innych Bonusów (oddzielone przecinkiem):<br>
+                <input type="text" id="other-bonuses" name="other-bonuses" placeholder="np. 10,20,30" required>
+            </label>
+
+            <label for="daily-bonus">
+                <select id="daily-bonus" aria-label="Wybierz bonus dzienny">
+                    <option value="0" selected>Wybierz bonus dzienny</option>
+                    <option value="0.05">5%</option>
+                    <option value="0.07">7%</option>
+                    <option value="0.12">12%</option>
+                    <option value="0.20">20%</option>
+                    <option value="0.33">33%</option>
+                    <option value="0.50">50%</option>
+                </select>
+            </label>
+            <br>
+            <button type="submit">Oblicz</button>
+        </form> 
+    </div>
+    <div id="result"></div>
+    <script src="future.js"></script>
+</body>
+</html>

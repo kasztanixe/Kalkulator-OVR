@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let selectedEngagement = 0; // Domyślnie 0%
-    const activeBoosts = new Set(); // To keep track of active boosts
+    let selectedEngagement = 0;
+    const activeBoosts = new Set();
 
     const engagementSelect = document.getElementById('engagement-select');
     engagementSelect.value = selectedEngagement;
@@ -50,19 +50,18 @@ document.addEventListener('DOMContentLoaded', function() {
         let baseResult = calculateOVR(currentOVR, trainedOVR, trainedSkill, selectedEngagement);
         let finalResult = baseResult;
 
-        // Add boosts based on active buttons
         let boostTotal = 0;
         if (activeBoosts.has('hero-drink')) {
-            boostTotal += trainedOVR * 0.33; // Add 33% of trained OVR
+            boostTotal += trainedOVR * 0.33;
         }
         if (activeBoosts.has('hero-boost')) {
-            boostTotal += trainedOVR * 0.33; // Add 33% of trained OVR
+            boostTotal += trainedOVR * 0.33;
         }
         if (activeBoosts.has('hero-voice')) {
-            boostTotal += trainedOVR * 0.33; // Add 33% of trained OVR
+            boostTotal += trainedOVR * 0.33;
         }
         if (activeBoosts.has('team-boost')) {
-            boostTotal += trainedOVR * 0.12; // Add 12% of trained OVR
+            boostTotal += trainedOVR * 0.12;
         }
 
         finalResult += boostTotal;
@@ -94,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Format number with thousand separators
     function formatNumber(number) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     }
