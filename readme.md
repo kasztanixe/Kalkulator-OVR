@@ -20,6 +20,8 @@ Kalkulator OVR to aplikacja internetowa przeznaczona dla graczy gry **FootballTe
 - **OVR Slotów Kart**: Wprowadź wartość OVR slotów kart.
 - **OVR Innych Bonusów**: Wprowadź wartości innych bonusów oddzielone przecinkiem (np. 10,20,30).
 - **Bonus Dzienny**: Wybierz poziom bonusu dziennego z rozwijanej listy (np. 5%, 7%, 12%).
+- **Zaangażowanie**: Wybierz poziom zaangażowania z rozwijanej listy (np. 5%, 7%, 12%).
+- **Boosty**: Aktywuj różne boosty (Hero Drink, Hero Boost, Hero Voice, Team Boost) klikając odpowiednie przyciski.
 - **Oblicz**: Kliknij przycisk „Oblicz”, aby zobaczyć potrzebny wytrenowany OVR.
 
 ## Uruchomienie
