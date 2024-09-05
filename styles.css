@@ -32,7 +32,7 @@ body::before {
     border-radius: 15px;
     border: 1px solid #065fc2;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
-    width: 260px;
+    width: 280px;
 }
 
 h1 {

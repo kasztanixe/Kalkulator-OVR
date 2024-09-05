@@ -30,22 +30,44 @@
                 <input type="number" id="card-slots-ovr" name="card-slots-ovr" required>
             </label>
 
-            <label for="other-bonuses">OVR Innych Bonusów (oddzielone przecinkiem):<br>
+            <label for="other-bonuses">OVR Innych Bonusów<br>(oddzielone przecinkiem):<br>
                 <input type="text" id="other-bonuses" name="other-bonuses" placeholder="np. 10,20,30" required>
             </label>
 
-            <label for="daily-bonus">
-                <select id="daily-bonus" aria-label="Wybierz bonus dzienny">
-                    <option value="0" selected>Wybierz bonus dzienny</option>
-                    <option value="0.05">5%</option>
-                    <option value="0.07">7%</option>
-                    <option value="0.12">12%</option>
-                    <option value="0.20">20%</option>
-                    <option value="0.33">33%</option>
-                    <option value="0.50">50%</option>
-                </select>
-            </label>
-            <br>
+            <div class="engagement-hero-container">
+                <div class="engagement-options">
+                    <select id="daily-bonus" aria-label="Wybierz bonus dzienny">
+                        <option value="0" selected>Wybierz bonus dzienny</option>
+                        <option value="0.05">5%</option>
+                        <option value="0.07">7%</option>
+                        <option value="0.12">12%</option>
+                        <option value="0.20">20%</option>
+                        <option value="0.33">33%</option>
+                        <option value="0.50">50%</option>
+                    </select>
+                </div>
+                <div class="engagement-options">
+                    <select id="engagement-select" aria-label="Wybierz zaangażowanie">
+                        <option value="0" selected>Zaangażowanie</option>
+                        <option value="0.05">5%</option>
+                        <option value="0.07">7%</option>
+                        <option value="0.12">12%</option>
+                        <option value="0.20">20%</option>
+                        <option value="0.33">33%</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <div class="button-row">
+                        <button type="button" id="hero-drink-button" class="inactive">Hero Drink</button>
+                        <button type="button" id="hero-boost-button" class="inactive">Hero Boost</button>
+                    </div>
+                    <div class="button-row">
+                        <button type="button" id="hero-voice-button" class="inactive">Hero Voice</button>
+                        <button type="button" id="team-boost-button" class="inactive">Team Boost</button>
+                    </div>
+                </div>
+            </div>
+
             <button type="submit">Oblicz</button>
         </form> 
     </div>
