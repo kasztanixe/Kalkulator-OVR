@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleBoost('team-boost');
     });
 
+    document.getElementById('playstyle-button').addEventListener('click', function() {
+        toggleBoost('playstyle');
+    });
+
     document.getElementById('ovr-form').addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -47,10 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        let baseResult = calculateOVR(currentOVR, trainedOVR, trainedSkill, selectedEngagement);
+        let baseResult = calculateOVR(currentOVR, trainedOVR, selectedEngagement);
         let finalResult = baseResult;
 
         let boostTotal = 0;
+        if (activeBoosts.has('playstyle')) {
+            boostTotal += (trainedSkill * 0.33) / 8;
+        }
         if (activeBoosts.has('hero-drink')) {
             boostTotal += trainedOVR * 0.33;
         }
@@ -70,8 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
         displayResult(`Wynik OVR: <span class="rounded-result">${formatNumber(roundedResult)}</span>`);
     });
 
-    function calculateOVR(current, trainedOVR, trainedSkill, engagement) {
-        return current + (trainedOVR * engagement) + ((trainedSkill * 0.33) / 8);
+    function calculateOVR(current, trainedOVR, engagement) {
+        return current + (trainedOVR * engagement);
     }
 
     function displayResult(message) {
