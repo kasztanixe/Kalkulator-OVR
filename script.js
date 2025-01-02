@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleBoost('team-boost');
     });
 
+    document.getElementById('kosa-button').addEventListener('click', function() {
+        toggleBoost('kosa');
+    });
+
     document.getElementById('playstyle-button').addEventListener('click', function() {
         toggleBoost('playstyle');
     });
@@ -69,6 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (activeBoosts.has('team-boost')) {
             boostTotal += trainedOVR * 0.12;
+        }
+        if (activeBoosts.has('kosa')) {
+            boostTotal += trainedOVR * 0.2;
         }
 
         finalResult += boostTotal;
