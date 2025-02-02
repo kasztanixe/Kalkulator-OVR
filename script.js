@@ -13,16 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleBoost('hero-drink');
     });
 
-    document.getElementById('hero-boost-button').addEventListener('click', function() {
-        toggleBoost('hero-boost');
-    });
-
     document.getElementById('hero-voice-button').addEventListener('click', function() {
         toggleBoost('hero-voice');
-    });
-
-    document.getElementById('team-boost-button').addEventListener('click', function() {
-        toggleBoost('team-boost');
     });
 
     document.getElementById('kosa-button').addEventListener('click', function() {
@@ -65,14 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (activeBoosts.has('hero-drink')) {
             boostTotal += trainedOVR * 0.33;
         }
-        if (activeBoosts.has('hero-boost')) {
-            boostTotal += trainedOVR * 0.33;
-        }
         if (activeBoosts.has('hero-voice')) {
             boostTotal += trainedOVR * 0.33;
-        }
-        if (activeBoosts.has('team-boost')) {
-            boostTotal += trainedOVR * 0.12;
         }
         if (activeBoosts.has('kosa')) {
             boostTotal += trainedOVR * 0.2;

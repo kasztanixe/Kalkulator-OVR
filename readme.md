@@ -10,7 +10,7 @@ Kalkulator OVR to aplikacja internetowa przeznaczona dla graczy gry **FootballTe
 - **Wytrenowany OVR**: Wprowadź wartość wytrenowanego OVR.
 - **Wytrenowana Umiejętność**: Wprowadź wartość wytrenowanej umiejętności.
 - **Zaangażowanie**: Wybierz poziom zaangażowania z rozwijanej listy (np. 5%, 7%, 12%).
-- **Boosty**: Aktywuj różne boosty (Hero Drink, Hero Boost, Hero Voice, Team Boost, Kosa) klikając odpowiednie przyciski.
+- **Boosty**: Aktywuj różne boosty (Hero Drink, Hero Voice, Kosa) klikając odpowiednie przyciski.
 - **Oblicz**: Kliknij przycisk „Oblicz”, aby zobaczyć końcowy wynik OVR.
 
 ## Uruchomienie
